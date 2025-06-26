@@ -4,11 +4,13 @@ const select = document.getElementById("select")
 const formulario = document.getElementById("form")
 const boton = document.getElementById("btn")
 
-let resultado = document.createElement("h2")
+// con document.getElementById obtenemos los elementos por su ID
 
-formulario.appendChild(resultado)
+let resultado = document.createElement("h2") // Creamos la variable resultado que crea un elemento "h2" para mostrar el resultado 
+ 
+formulario.appendChild(resultado) // Hacemos un appendChild de resultado, osea el elemento que acabamos de crear a traves de la DOM
 
-formulario.addEventListener("submit", (e) =>{
+formulario.addEventListener("submit", (e) =>{ // Manejamos el evento submit del formulario en donde realizamos los calculos dependendiendo de la opcion seleccionada  
 
     e.preventDefault()
 
@@ -34,9 +36,9 @@ formulario.addEventListener("submit", (e) =>{
 
 })
 
-operador2.addEventListener("input", () => {
+operador2.addEventListener("input", () => { // Con estos otros dos eventos manejamos la situacion de cuando el usuario ingresa un 0 como operador2 a la hora de dividir
     if(select.value === "division" && Number(operador2.value) === 0){
-        boton.disabled = true
+        boton.disabled = true // Deshabilita el boton si es division y si el operador2 es 0
     } else {
         boton.disabled = false
     }
