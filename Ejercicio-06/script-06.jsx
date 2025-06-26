@@ -7,12 +7,12 @@ function App(){
 
     let msg = <p></p> // Variable para mostrar mensajes
 
-    function handleAltura(e){
+    function handleAltura(e){ // Funcion para la altura y setear su valor
         const value = parseFloat(e.target.value)
         setAltura(value)
         if(altura <= 0){
             msg = <p style={{color: "white"}}>Solo valores positivos</p>
-            setMensaje(msg)
+            setMensaje(msg) // Validamos que sean valores positivos
             return
         }  
         
@@ -29,7 +29,7 @@ function App(){
         
     }
 
-    function Calcular(){
+    function Calcular(){ // Function para calcular el IMC y mostrar un mensaje disntito dependiendo al resultado
         const resultado = peso / (altura * altura)
 
         if(resultado < 18.5){
@@ -51,7 +51,7 @@ function App(){
 
     }
 
-    return (
+    return ( // Devuelve un form con sus elementos
         <>
             <form onSubmit={(e) => e.preventDefault()}>
                 <h1 style={{color: "white"}}>Calcular IMC</h1>
@@ -59,7 +59,7 @@ function App(){
                 <input type="number" value={altura} onChange={handleAltura} placeholder="Su altura en metros"/>
                 <button type="submit" onClick={Calcular}>Calcular</button>
             </form>
-            {mensaje}
+            {mensaje /* Mostramos el mensaje fuera del form */}
         </>
     )
 }
