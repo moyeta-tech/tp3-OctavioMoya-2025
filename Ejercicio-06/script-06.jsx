@@ -57,8 +57,10 @@ function App(){
                 <h1 style={{color: "white"}}>Calcular IMC</h1>
                 <label htmlFor="peso" style={{color: "white"}}>Peso: </label>
                 <input type="number" id="peso" value={peso} onChange={handlePeso} placeholder="Su peso en kg" />
+
                 <label htmlFor="altura" style={{color: "white"}}>Altura: </label>
                 <input type="number" id="altura" value={altura} onChange={handleAltura} placeholder="Su altura en metros"/>
+                
                 <button type="submit" onClick={Calcular}>Calcular</button>
             </form>
             {mensaje /* Mostramos el mensaje fuera del form */}
